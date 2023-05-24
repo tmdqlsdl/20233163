@@ -1,4 +1,5 @@
 # 리눅스 명령어
+###### 20233163 임정은
 
 ## top
 * 현재 OS의 상태를 나타내주는 CLI 어플리케이션임.
@@ -82,13 +83,52 @@ CPU 로드란? CPU가 수행하는 작업의 양 -> 실행되거나대기중인 
 ![image](https://github.com/tmdqlsdl/20233163/assets/133830068/54db4500-c935-43a0-94a8-fbc1c11c3fa0)
 
 출력 내용
+
 ![image](https://github.com/tmdqlsdl/20233163/assets/133830068/ed2f346d-8698-4fe8-8b52-9c7330097139)
 
 BSD 계열 옵션
+
 ![image](https://github.com/tmdqlsdl/20233163/assets/133830068/0f8aee73-34b6-4c34-afee-cf860e30ca1d)
 
 ---
-##jobs
+## jobs
+: 리눅스 명령어 jobs는 작업이 중지된 상태, 백그라운드로 진행 중인 작업 상태, 변경 되었찌만 보고되지 않은 상태등을 표시함
+* 사용법 
+   jobs [옵션] [job ID]
+   jobs -x command [args]
+* 옵션 
+
+![image](https://github.com/tmdqlsdl/20233163/assets/133830068/d8f55cf8-9bbb-49b9-beee-8eb7e4268603)
+* jobs로 알 수 있는 세션의 상태
+
+![image](https://github.com/tmdqlsdl/20233163/assets/133830068/837d6f79-10d0-4a9f-8bc2-d001990a0740)
+
+---
+## kill
+: 프로세스를 지정하고 신호를 보내서 제어하는 명령어임.
+* 프로세스를 종료하는 용도로 많이 사용됨.
+> 사용법 : kill [옵션]
+
+![image](https://github.com/tmdqlsdl/20233163/assets/133830068/f06f49e9-ebe3-472d-ac98-7842c209b965)
+> kill -9
+  사용방법 : kill 뒤에 -9옵션으로 프로세스아이디를 저장하고 종료 신호를 입력하는 것이 가장 일반적임.
+  
+  ![image](https://github.com/tmdqlsdl/20233163/assets/133830068/92559cc2-8502-4b1e-b2d7-c748521898b8)
+  
+  -ㅣ 옵션을 사용 -> 사용 가능한 모든 신호 확인 가능
+  
+  ![image](https://github.com/tmdqlsdl/20233163/assets/133830068/f0f27305-7b3c-4529-ae18-c2144b4a384c)
+
+* 신호 번호
+ 신호이름 으로 신호를 보낼 수 있음
+ 신호로 강제로 종료시킬 떄 사용 -> -9-SIGKLL 등등 옵션을 주어 사용
+  
+  
+
+  
+
+
+ 
 
 
 
