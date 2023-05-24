@@ -32,9 +32,72 @@ CPU 로드란? CPU가 수행하는 작업의 양 -> 실행되거나대기중인 
 
 ### Taks
 : 현재 프로세스들의 상태를 나타내주는 영역임
-  - 전체 프로세스, running -> running 상태의 프로세스 , sleeping -> 대기 상태 process , stopped -> 종료된 프로세스 , Zombie -> 좀비상태인 프로세스의 수  를 나타냄.
-  - 일반적으로 
-  - 
+  - 전체 프로세스, running -> running 상태의 프로세스 , sleeping -> 대기 상태 process , stopped -> 종료된 프로세스 ,   Zombie -> 좀비상태인 프로세스의 수  를 나타냄.
+  - 일반적으로 IO 기반의 일과 CPU 기반의 일을 번갈아 가면서 수행함.
+  - IO 기반의 일을 하게 될 떄 -> CPU는 idle 타임에 들어감.
+  - 프로세스 스케줄링 알고리즘에 의헤 프로세스는 번갈아가면서 실행
+  ![image](https://github.com/tmdqlsdl/20233163/assets/133830068/5fdb0193-ecc6-4282-909f-175caf760738)
+  * 실행(Runnable) - CPU에 의해서 명령어가 실행중인 Process
+  * 준비(Ready) - CPU의 명령어 실행을 기다리는 Process
+  * 대기(Waiting) - I/O operation이 끝나기를 기다리는 Process
+  * 종료(Terminated) - Ctrl + Z 등의 signal로 종료된 Process
+  * Zombie - Process는 root Process로 부터 뿌리내린 자식 Process의 형식으로 트리구조를 형성함. 이 때 부모가 먼저 종료된 다면 root process로 부터 닿을 수 없는 Process가 생김. :zombie 
+
+### CPU 사용량
+: CPU가 어떻게 사용되고 있는지 그 사용율을 보여주는 영역임
+모든 값의 총 합 = 100% 
+ * us : 프로세스의 유저 영역에서의 CPU 사용률
+ * sy : 프로세스의 커널 영역에서의 CPU 사용률
+ * ni : 프로세스의 우선순위(priority) 설정에 사용하는 CPU 사용률
+ * id : 사용하고 있지 않는 비율
+ * wa : IO가 완료될때까지 기다리고 있는 CPU 비율
+ * hi : 하드웨어 인터럽트에 사용되는 CPU 사용률
+ * si : 소프트웨어 인터럽트에 사용되는 CPU 사용률
+ * st : CPU를 VM에서 사용하여 대기하는 CPU 비율
+ 
+### 메모리 사용량
+%CPU(s) 영역 아래에 메모리와 관련된 영역 있음.
+1. 좋은 RAM의 메모리 영역 
+2. SWAP 메모리 영역 : 디스크 메모리 처럼 이용함.
+ ***일반적으로 Mem의 사용량이 거의 가득 찼을때 사용,***
+ ***디스크 임 -> RAM 메모리 속도가 많이 느림***
+* total : 총 메모리 양
+* free : 사용가능한 메모리 양
+* used : 사용중인 메모리 양
+3. buff/cache : 커널 버퍼에서 사용되는 메모리를 뜻함
+ * IO와 관련되어 사용되는 버퍼에 사용되는 메모리
+ * IO에 상대적으로 빠른 속도를 가질 수 있음
+5. chache : Disk의 페이지 캐시
+
+---
+## PS
+* 현재 실행중인 프로세스 목록과 상태를 보여줌 (윈도우의 작업 관리자와 비슷한 것)
+* ps 사용법
+![image](https://github.com/tmdqlsdl/20233163/assets/133830068/0fc28154-7f48-4631-b181-59e6cd7ec71c)
+* 사용법 예시
+ >$ ps - ef : 모든 프로세스를 풀 포맷으로 출력
+![image](https://github.com/tmdqlsdl/20233163/assets/133830068/f2e28692-938c-4306-bed1-45ffeb20474a)
+
+>$ ps -ef | grep '프로세스명' : '프로세스명'의 프로세스 구동 확인
+![image](https://github.com/tmdqlsdl/20233163/assets/133830068/54db4500-c935-43a0-94a8-fbc1c11c3fa0)
+
+출력 내용
+![image](https://github.com/tmdqlsdl/20233163/assets/133830068/ed2f346d-8698-4fe8-8b52-9c7330097139)
+
+BSD 계열 옵션
+![image](https://github.com/tmdqlsdl/20233163/assets/133830068/0f8aee73-34b6-4c34-afee-cf860e30ca1d)
+
+---
+##jobs
+
+
+
+
+
+
+
+
+
 
 
 
